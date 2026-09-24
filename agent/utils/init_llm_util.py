@@ -1,4 +1,6 @@
 from langchain.chat_models import init_chat_model
+from langchain_core.language_models import BaseChatModel
+
 from agent.utils.env_util import get_env_var
 
 
@@ -14,3 +16,7 @@ qwen_llm = init_chat_model(
     model_provider="openai",
     api_key=get_env_var("QWEN_API_KEY"),
 )
+
+def make_main_model() -> BaseChatModel:
+
+    return deepseek_llm
